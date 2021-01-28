@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import "./App.scss";
 import { AuthProvider } from "./context/auth";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 const App: React.FC = () => {
   return (
@@ -16,7 +17,7 @@ const App: React.FC = () => {
             <Login />
           </Route>
           <Route path="/register">
-            <h2>Register</h2>
+            <Register />
           </Route>
           <Route path="/">
             <Home />
