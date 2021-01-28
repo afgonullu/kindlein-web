@@ -1,13 +1,87 @@
+$primary: #614ad3;
+$secondary: #b0a5e9;
+$success: #a7e4e6;
+$danger: #f46036;
+$warning: #ffb5bc;
+$info: #7f64b4;
+$dark: #171123;
+$light: #eff9f0;
+$muted: #919aa3;
+
 $theme-colors: (
-  "info": tomato,
-  "danger": teal,
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "danger": $danger,
+  "warning": $warning,
+  "info": $info,
+  "dark": $dark,
+  "light": $light,
 );
+
+.glassEffect {
+  background: linear-gradient(90.38deg, rgba(234, 255, 254, 0.4) 0%, rgba(201, 217, 241, 0.4) 100%);
+  box-shadow: 20px 20px 50px rgba(23, 17, 35, 0.2);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+}
+
+.glassEffect2nd {
+  background: linear-gradient(90.38deg, rgba(234, 255, 254, 0.5) 0%, rgba(201, 217, 241, 0.5) 100%);
+  box-shadow: 20px 20px 50px rgba(23, 17, 35, 0.2);
+  backdrop-filter: blur(12px);
+}
 
 @import "~bootstrap/scss/bootstrap";
 
 body {
   min-height: 100vh;
-  background: linear-gradient(to bottom right, #e9b7ce, #d3f3f1);
+  background: linear-gradient(to bottom right, $warning, $success);
+  color: $dark;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 19px;
+
+  .logo {
+    height: 37px;
+    margin-right: 0.75rem;
+  }
+}
+
+.kl-header {
+  .navbar {
+    @extend .glassEffect;
+    border-radius: 0 0 20px 20px;
+    padding: 0;
+    text-decoration: none;
+
+    .brand-wrapper {
+      padding: 0.5rem;
+      padding-left: 2rem;
+      color: $dark;
+    }
+
+    .navbar-nav {
+      padding-right: 2rem;
+
+      .nav-link {
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        color: $dark;
+        svg {
+          margin-right: 0.5rem;
+        }
+
+        &:hover {
+          @extend .glassEffect2nd;
+        }
+      }
+    }
+  }
 }
 
 .kl-login {
@@ -16,22 +90,8 @@ body {
   align-items: center;
   justify-content: center;
 
-  .brand-wrapper {
-    display: flex;
-    align-items: center;
-    margin-bottom: 19px;
-
-    .logo {
-      height: 37px;
-      margin-right: 0.75rem;
-    }
-  }
-
   .login-card {
-    background: linear-gradient(90.38deg, rgba(234, 255, 254, 0.5) 0%, rgba(201, 217, 241, 0.5) 100%);
-    border: 0;
-    border-radius: 27.5px;
-    box-shadow: 40px 40px 100px rgba(25, 61, 131, 0.1);
+    @extend .glassEffect;
     overflow: hidden;
 
     &-img {
@@ -51,13 +111,13 @@ body {
 
     &-description {
       font-size: 25px;
-      color: #000;
+      color: $dark;
       font-weight: normal;
       margin-bottom: 23px;
     }
 
     .form-control {
-      border: 1px solid #d5dae2;
+      border: 1px solid $light;
       padding: 15px 25px;
       margin-bottom: 20px;
       min-height: 45px;
@@ -66,7 +126,7 @@ body {
       font-weight: normal;
 
       &::placeholder {
-        color: #919aa3;
+        color: $muted;
       }
     }
 
@@ -77,30 +137,30 @@ body {
 
     .login-btn {
       padding: 13px 20px 12px;
-      background-color: #000;
+      background-color: $primary;
       border-radius: 4px;
       font-size: 17px;
       font-weight: bold;
       line-height: 20px;
-      color: #fff;
+      color: $light;
       margin-bottom: 24px;
 
       &:hover {
-        border: 1px solid #000;
+        border: 1px solid $primary;
         background-color: transparent;
-        color: #000;
+        color: $primary;
       }
     }
 
     .forgot-password-link {
       font-size: 14px;
-      color: #919aa3;
+      color: $muted;
       margin-bottom: 12px;
     }
 
     &-footer-text {
       font-size: 16px;
-      color: #0d2366;
+      color: $danger;
       margin-bottom: 60px;
 
       @media (max-width: 767px) {
@@ -111,7 +171,7 @@ body {
     &-footer-nav {
       a {
         font-size: 14px;
-        color: #919aa3;
+        color: $muted;
       }
     }
   }
