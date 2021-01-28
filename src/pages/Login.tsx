@@ -78,7 +78,7 @@ const Login: React.FC = () => {
                 </Form>
 
                 <p className="text-center">Don&apos;t have and account?</p>
-                <Button className="btn-block" variant="primary" type="submit" as={Link} to="/register">
+                <Button className="btn-block" variant="danger" type="submit" as={Link} to="/register">
                   Register
                 </Button>
               </Card.Body>
