@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Header from "./layouts/Header";
 import Home from "./pages/Home";
 
 import "./App.scss";
@@ -12,7 +11,6 @@ const App: React.FC = () => {
   return (
     <AuthProvider>
       <Router>
-        <Header />
         <Switch>
           <Route path="/login">
             <Login />

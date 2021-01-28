@@ -1,9 +1,12 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
+import Header from "../layouts/Header";
+
 const Home: React.FC = () => {
   return (
     <div>
+      <Header />
       <Switch>
         <Route path="/profile">
           <h3>User Profile</h3>
