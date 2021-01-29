@@ -7,7 +7,7 @@ const Profile: React.FC = () => {
       <Container>
         <Row>
           <Col xl={7}>2</Col>
-          <Col xl={5}>3</Col>
+          <Col>3</Col>
         </Row>
       </Container>
     </main>
