@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import Header from "../layouts/Header";
+import Profile from "../layouts/Profile";
 
 const Home: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ const Home: React.FC = () => {
       <Header />
       <Switch>
         <Route path="/profile">
-          <h3>User Profile</h3>
+          <Profile />
         </Route>
         <Route path="/children/:childId">
           <h3>Child Specific Feed</h3>
