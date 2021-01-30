@@ -21,6 +21,14 @@ $theme-colors: (
 
 $grid-gutter-width: 0;
 
+$card-border-width: 0;
+$card-border-radius: 0;
+$card-bg: none;
+
+$list-group-border-width: 0;
+$list-group-border-radius: 0;
+$list-group-bg: none;
+
 .glassEffect {
   background: linear-gradient(90.38deg, rgba(234, 255, 254, 0.5) 0%, rgba(201, 217, 241, 0.5) 100%);
   box-shadow: 20px 20px 40px rgba(23, 17, 35, 0.1);
@@ -29,7 +37,8 @@ $grid-gutter-width: 0;
 }
 
 .glassEffect2nd {
-  background: linear-gradient(90.38deg, rgba(234, 255, 254, 0.7) 0%, rgba(234, 255, 254, 0.7) 100%);
+  background: linear-gradient(90.38deg, rgba(234, 255, 254, 0.4) 0%, rgba(234, 255, 254, 0.4) 100%);
+  border-radius: 1rem;
   backdrop-filter: blur(12px);
   // add border
 }
@@ -45,12 +54,16 @@ body {
 .brand-wrapper {
   display: flex;
   align-items: center;
-  margin-bottom: 19px;
+  margin-bottom: 1.25rem;
 
   .logo {
     height: 37px;
-    margin-right: 0.75rem;
+    margin-right: 0.8rem;
   }
+}
+
+.half-title {
+  padding-left: 1.25rem;
 }
 
 .kl-header {
@@ -62,7 +75,7 @@ body {
     align-items: flex-start;
 
     .brand-wrapper {
-      padding: 0.5rem;
+      padding: 0.512rem;
       color: $dark;
     }
 
@@ -77,7 +90,7 @@ body {
         align-items: center;
         color: $dark;
         svg {
-          margin-right: 0.5rem;
+          margin-right: 0.512rem;
         }
 
         &:hover {
@@ -93,6 +106,23 @@ body {
 
   .container {
     min-height: 100vh;
+  }
+}
+
+.kl-profile {
+  .profile-image {
+    border-radius: 50%;
+    margin-bottom: 0.512rem;
+  }
+
+  .list-group-item {
+    @extend .glassEffect2nd;
+    margin-bottom: 0.512rem;
+
+    &:first-child,
+    &:last-child {
+      border-radius: 1rem;
+    }
   }
 }
 

@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Route, Switch } from "react-router-dom";
 
 import Header from "../layouts/Header";
-import Profile from "../layouts/Profile";
+import Profile from "./Profile";
 
 const Home: React.FC = () => {
   return (

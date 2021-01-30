@@ -20,6 +20,10 @@ const Header: React.FC = () => {
               <Home />
               <span>Home</span>
             </NavLink>
+            <NavLink className="nav-link" to="/profile">
+              <LogIn />
+              <span>Profile</span>
+            </NavLink>
             <NavLink className="nav-link" to="/login">
               <LogIn />
               <span>Login</span>

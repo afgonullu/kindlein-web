@@ -6,3 +6,11 @@ export interface IUser {
   createdAt: string;
   token: string;
 }
+
+export interface IChild {
+  id: string;
+  name: string;
+  birthDate: string;
+  createdAt: string;
+  createdBy: string;
+}
