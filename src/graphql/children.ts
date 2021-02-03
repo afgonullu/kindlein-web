@@ -1,4 +1,48 @@
-import { gql, StoreObject, useMutation } from "@apollo/client";
+import { gql, StoreObject, useMutation, useQuery } from "@apollo/client";
+import { IChild } from "../utils/interfaces";
+
+export const CHILD_FIELDS = gql`
+  fragment ChildFields on Child {
+    name
+    id
+    createdBy
+    createdAt
+    birthDate
+    moments {
+      id
+      title
+      body
+      createdAt
+      createdBy
+      momentDate
+      location
+      likeCount
+      commentCount
+      belongsTo {
+        name
+      }
+    }
+  }
+`;
+
+const GET_CHILDREN = gql`
+  query getChildrenOfUser($userId: ID!) {
+    children(userId: $userId) {
+      ...ChildFields
+    }
+  }
+  ${CHILD_FIELDS}
+`;
+
+export const useGetChildren = (id: string | undefined): IChild[] => {
+  const { data } = useQuery(GET_CHILDREN, { variables: { userId: id } });
+
+  if (data) {
+    return data.children;
+  }
+
+  return [];
+};
 
 // ADD CHILD
 const ADD_CHILD = gql`
