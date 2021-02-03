@@ -36,6 +36,19 @@ const splitLink = split(
 
 // eslint-disable-next-line import/prefer-default-export
 export const client = new ApolloClient({
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({
+    typePolicies: {
+      Query: {
+        fields: {
+          child(_, { args, toReference }) {
+            return toReference({
+              __typename: "Child",
+              id: args!.id,
+            });
+          },
+        },
+      },
+    },
+  }),
   link: splitLink,
 });
