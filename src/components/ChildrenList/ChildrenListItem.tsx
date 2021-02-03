@@ -9,17 +9,21 @@ import DeleteButton from "../Buttons/DeleteButton";
 const ChildrenListItem: React.FC<{ child: IChild }> = ({ child }) => {
   const { user } = useContext(AuthContext);
 
-  console.log(user);
-  console.log(child);
-
   return (
     <ListGroupItem>
-      <span>
-        <Link to={`/children/${child.id}`}>{child.name}</Link>
-      </span>
-      {user && user.id === child.createdBy ? (
-        <DeleteButton childId={child.id} momentId={null} commentId={null} />
-      ) : null}
+      <div className="info">
+        <span>
+          <img className="profile-image mr-2" src="https://via.placeholder.com/45" alt="" />
+          <Link className="child-name" to={`/children/${child.id}`}>
+            {child.name}
+          </Link>
+        </span>
+      </div>
+      <div className="buttons">
+        {user && user.id === child.createdBy ? (
+          <DeleteButton childId={child.id} momentId={null} commentId={null} />
+        ) : null}
+      </div>
     </ListGroupItem>
   );
 };

@@ -15,10 +15,10 @@ const ChildFeed: React.FC = () => {
     <main className="kl-main kl-feed">
       <Container>
         <Row>
-          <Col xl={7} className="px-3">
+          <Col xl={7} className="content px-3">
             <MomentList />
           </Col>
-          <Col className="px-1">
+          <Col className="sidebar px-1">
             <MomentForm />
             <Footer />
           </Col>

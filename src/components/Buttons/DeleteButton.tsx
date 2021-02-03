@@ -25,7 +25,7 @@ const DeleteButton: React.FC<{ childId: string | null; momentId: string | null; 
 
   return (
     <Button className="kl-card-delete" onClick={handleClick}>
-      <Trash />
+      <Trash size="24" />
     </Button>
   );
 };

@@ -14,6 +14,7 @@ const ChildForm: React.FC = () => {
 
   return (
     <Container className="kl-form-container">
+      <h4 className="half-title text-center">Add New Child</h4>
       <Form noValidate onSubmit={onSubmit} className="kl-card kl-form">
         <Form.Group controlId="formBasicName" className="kl-form-group">
           {/* <Form.Label>Moment Title</Form.Label> */}
@@ -41,7 +42,7 @@ const ChildForm: React.FC = () => {
           />
           {/* <Form.Control.Feedback type="invalid">{errors.momentDate}</Form.Control.Feedback> */}
         </Form.Group>
-        <Button variant="primary" type="submit" className="kl-form-button">
+        <Button variant="primary" type="submit" className="btn-block kl-form-button">
           Add New Child
         </Button>
       </Form>

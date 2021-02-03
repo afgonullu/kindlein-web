@@ -104,20 +104,38 @@ body {
 .kl-main {
   min-height: 100vh;
 
-  .container {
+  & > .container {
     min-height: 100vh;
+  }
+
+  .content {
+    padding-top: 1.25rem;
+  }
+
+  .sidebar {
+    padding-top: 1.25rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
 
 .kl-profile {
   .profile-image {
     border-radius: 50%;
-    margin-bottom: 0.512rem;
   }
 
   .list-group-item {
     @extend .glassEffect2nd;
     margin-bottom: 0.512rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .child-name {
+      text-transform: capitalize;
+    }
 
     &:first-child,
     &:last-child {

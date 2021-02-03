@@ -14,12 +14,12 @@ const Profile: React.FC = () => {
     <main className="kl-main kl-profile">
       <Container>
         <Row>
-          <Col xl={7} className="px-3">
+          <Col xl={7} className="content px-3">
             <UserProfile user={user} />
-            <h4 className="half-title">Your Children</h4>
+            <h4 className="half-title text-center">My Children</h4>
             <ChildrenList />
           </Col>
-          <Col className="px-1">
+          <Col className="sidebar px-1">
             <ChildForm />
             <Footer />
           </Col>

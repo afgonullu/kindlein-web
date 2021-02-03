@@ -103,7 +103,7 @@ const MomentForm: React.FC = () => {
             </Form.Group>
           </Col>
         </Row>
-        <Button variant="primary" type="submit" className="kl-form-button">
+        <Button variant="primary" type="submit" className="btn-block kl-form-button">
           Save The Moment
         </Button>
       </Form>

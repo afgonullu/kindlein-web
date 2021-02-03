@@ -14,7 +14,6 @@ const MomentList: React.FC = () => {
 
   const moments = child
     ? child.moments.map((moment: IMoment) => {
-        console.log(moment);
         return <MomentListItem key={moment.id} moment={moment} />;
       })
     : "No Moments Yet";
