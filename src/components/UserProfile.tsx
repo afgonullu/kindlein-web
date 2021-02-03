@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import { IUser } from "../utils/interfaces";
 
+import { IUser } from "../utils/interfaces";
 import profilePic from "../assets/images/github.jpg";
 
 const UserProfile: React.FC<{ user: IUser | null }> = ({ user }) => {

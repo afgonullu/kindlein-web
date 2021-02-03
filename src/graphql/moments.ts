@@ -31,7 +31,6 @@ const ADD_MOMENT = gql`
 export const useAddMoment = () => {
   const [addMoment] = useMutation(ADD_MOMENT, {
     update: (_cache, result) => {
-      console.log(result);
       // cache.modify({
       //   id: cache.identify()
       //   fields: {

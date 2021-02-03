@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Route, Switch } from "react-router-dom";
 
 import Header from "../layouts/Header";
-import ChildFeed from "./ChildFeed";
+import Feed from "./Feed";
 import Profile from "./Profile";
 
 const Home: React.FC = () => {
@@ -19,13 +19,13 @@ const Home: React.FC = () => {
               <Profile />
             </Route>
             <Route path="/children/:childId">
-              <ChildFeed />
+              <Feed />
             </Route>
             <Route path="/moments/:momentId">
               <h3>Moment Details Page</h3>
             </Route>
             <Route path="/">
-              <h3>Main Feed</h3>
+              <Feed />
             </Route>
           </Switch>
         </Col>

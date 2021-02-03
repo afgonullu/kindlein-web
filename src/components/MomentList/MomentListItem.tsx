@@ -1,4 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable no-restricted-globals */
 /* eslint-disable no-return-assign */
@@ -11,7 +10,7 @@ import { IMoment } from "../../utils/interfaces";
 import DeleteButton from "../Buttons/DeleteButton";
 
 const MomentListItem: React.FC<{ moment: IMoment }> = ({ moment }) => {
-  const context = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   return (
     <Card className="kl-card">
@@ -35,7 +34,7 @@ const MomentListItem: React.FC<{ moment: IMoment }> = ({ moment }) => {
           <i className="bi bi-chat" />
           <span>{moment.commentCount}</span>
         </Link>
-        {context.user && context.user.username === moment.createdBy ? (
+        {user && user.username === moment.createdBy ? (
           <DeleteButton childId={null} momentId={moment.id} commentId={null} />
         ) : null}
       </Card.Footer>

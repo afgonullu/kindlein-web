@@ -4,9 +4,9 @@ import { Navbar, Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { Home, LogIn } from "react-feather";
 
-import logo from "../assets/images/logo.png";
 import { useGetChildren } from "../graphql/children";
 import { AuthContext } from "../context/auth";
+import logo from "../assets/images/logo.png";
 
 const Header: React.FC = () => {
   const { user } = useContext(AuthContext);

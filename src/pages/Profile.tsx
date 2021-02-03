@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
+import { AuthContext } from "../context/auth";
 import ChildForm from "../components/ChildForm";
 import ChildrenList from "../components/ChildrenList/ChildrenList";
 import UserProfile from "../components/UserProfile";
-import { AuthContext } from "../context/auth";
 import Footer from "../layouts/Footer";
 
 const Profile: React.FC = () => {

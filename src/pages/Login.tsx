@@ -1,12 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState, useContext } from "react";
 import { useHistory, Link } from "react-router-dom";
-
 import { Button, Card, Col, Container, Form, Image, Row } from "react-bootstrap";
 
+import { AuthContext } from "../context/auth";
 import { useLogin } from "../graphql/users";
 import { useForm } from "../utils/useForm";
-import { AuthContext } from "../context/auth";
 
 import loginImage from "../assets/images/login.jpg";
 import logo from "../assets/images/logo.png";

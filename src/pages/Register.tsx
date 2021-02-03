@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
-
 import { Button, Card, Col, Container, Form, Image, Row } from "react-bootstrap";
 
 import { useRegister } from "../graphql/users";

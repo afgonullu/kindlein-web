@@ -1,16 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
 import MomentList from "../components/MomentList/MomentList";
 import MomentForm from "../components/MomentForm";
-import { AuthContext } from "../context/auth";
 import Footer from "../layouts/Footer";
 
-const ChildFeed: React.FC = () => {
-  const { user } = useContext(AuthContext);
-
-  console.log(user);
-
+const Feed: React.FC = () => {
   return (
     <main className="kl-main kl-feed">
       <Container>
@@ -28,4 +23,4 @@ const ChildFeed: React.FC = () => {
   );
 };
 
-export default ChildFeed;
+export default Feed;
