@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ListGroupItem } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import { AuthContext } from "../../context/auth";
 import { IChild } from "../../utils/interfaces";
@@ -13,7 +14,9 @@ const ChildrenListItem: React.FC<{ child: IChild }> = ({ child }) => {
 
   return (
     <ListGroupItem>
-      <span>{child.name}</span>
+      <span>
+        <Link to={`/children/${child.id}`}>{child.name}</Link>
+      </span>
       {user && user.id === child.createdBy ? (
         <DeleteButton childId={child.id} momentId={null} commentId={null} />
       ) : null}

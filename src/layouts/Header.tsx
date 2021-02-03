@@ -1,11 +1,17 @@
-import React from "react";
+/* eslint-disable react/jsx-indent */
+import React, { useContext } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { Home, LogIn } from "react-feather";
 
 import logo from "../assets/images/logo.png";
+import { useGetChildren } from "../graphql/children";
+import { AuthContext } from "../context/auth";
 
 const Header: React.FC = () => {
+  const { user } = useContext(AuthContext);
+  const children = useGetChildren(user?.id);
+
   return (
     <header className="kl-header">
       <Navbar expand="lg">
@@ -20,6 +26,14 @@ const Header: React.FC = () => {
               <Home />
               <span>Home</span>
             </NavLink>
+            {children
+              ? children.map((child) => (
+                  <NavLink key={child.id} className="nav-link" to={`/children/${child.id}`}>
+                    <Home />
+                    <span>{child.name}</span>
+                  </NavLink>
+                ))
+              : null}
             <NavLink className="nav-link" to="/profile">
               <LogIn />
               <span>Profile</span>

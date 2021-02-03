@@ -44,6 +44,25 @@ export const useGetChildren = (id: string | undefined): IChild[] => {
   return [];
 };
 
+const GET_CHILD = gql`
+  query getChild($id: ID!) {
+    child(id: $id) {
+      ...ChildFields
+    }
+  }
+  ${CHILD_FIELDS}
+`;
+
+export const useGetChild = (id: string | undefined): IChild | null => {
+  const { data } = useQuery(GET_CHILD, { variables: { id } });
+
+  if (data) {
+    return data.child;
+  }
+
+  return null;
+};
+
 // ADD CHILD
 const ADD_CHILD = gql`
   mutation addChild($name: String!, $birthDate: String!) {

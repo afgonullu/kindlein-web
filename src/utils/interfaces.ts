@@ -13,4 +13,35 @@ export interface IChild {
   birthDate: string;
   createdAt: string;
   createdBy: string;
+  moments: IMoment[];
+}
+
+export interface IMoment {
+  id: string;
+  title: string;
+  body: string;
+  createdAt: string;
+  createdBy: string;
+  belongsTo: {
+    id: string;
+    name: string;
+  };
+  momentDate: string;
+  location: string;
+  comments: [
+    {
+      id: string;
+      body: string;
+      username: string;
+      createdAt: string;
+    },
+  ];
+  likes: [
+    {
+      id: string;
+      username: string;
+    },
+  ];
+  likeCount: number;
+  commentCount: number;
 }
