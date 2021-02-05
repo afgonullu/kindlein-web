@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import Header from "../layouts/Header";
 import Feed from "./Feed";
 import Profile from "./Profile";
+import SingleMoment from "./SingleMoment";
 
 const Home: React.FC = () => {
   return (
@@ -22,7 +23,7 @@ const Home: React.FC = () => {
               <Feed />
             </Route>
             <Route path="/moments/:momentId">
-              <h3>Moment Details Page</h3>
+              <SingleMoment />
             </Route>
             <Route path="/">
               <Feed />

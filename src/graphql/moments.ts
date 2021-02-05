@@ -1,4 +1,41 @@
-import { gql, useMutation } from "@apollo/client";
+import { gql, useMutation, useQuery } from "@apollo/client";
+import { IMoment } from "../utils/interfaces";
+
+const GET_MOMENT = gql`
+  query getMoment($id: ID!) {
+    moment(id: $id) {
+      id
+      belongsTo {
+        id
+        name
+      }
+      body
+      commentCount
+      createdAt
+      createdBy
+      likeCount
+      location
+      momentDate
+      title
+      comments {
+        id
+        body
+        createdAt
+        username
+      }
+    }
+  }
+`;
+
+export const useGetMoment = (id: string | undefined): IMoment | null => {
+  const { data } = useQuery(GET_MOMENT, { variables: { id } });
+
+  if (data) {
+    return data.moment;
+  }
+
+  return null;
+};
 
 const ADD_MOMENT = gql`
   mutation addMoment($title: String!, $body: String!, $belongsTo: String!, $momentDate: String!, $location: String!) {

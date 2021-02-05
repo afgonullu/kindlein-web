@@ -20,6 +20,13 @@ export const CHILD_FIELDS = gql`
       commentCount
       belongsTo {
         name
+        id
+      }
+      comments {
+        id
+        body
+        createdAt
+        username
       }
     }
   }

@@ -28,14 +28,7 @@ export interface IMoment {
   };
   momentDate: string;
   location: string;
-  comments: [
-    {
-      id: string;
-      body: string;
-      username: string;
-      createdAt: string;
-    },
-  ];
+  comments: IComment[];
   likes: [
     {
       id: string;
@@ -44,4 +37,11 @@ export interface IMoment {
   ];
   likeCount: number;
   commentCount: number;
+}
+
+export interface IComment {
+  id: string;
+  body: string;
+  username: string;
+  createdAt: string;
 }

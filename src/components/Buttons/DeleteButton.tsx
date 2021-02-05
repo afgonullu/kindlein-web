@@ -3,23 +3,23 @@ import { Button } from "react-bootstrap";
 import { Trash } from "react-feather";
 import { useDeleteChild } from "../../graphql/children";
 import { useDeleteMoment } from "../../graphql/moments";
+import { useDeleteComment } from "../../graphql/comments";
 
-const DeleteButton: React.FC<{ childId: string | null; momentId: string | null; commentId: string | null }> = ({
-  childId,
-  momentId,
-  commentId,
-}) => {
+const DeleteButton: React.FC<{
+  childId: string | undefined;
+  momentId: string | undefined;
+  commentId: string | undefined;
+}> = ({ childId, momentId, commentId }) => {
   const deleteChild = useDeleteChild();
   const deleteMoment = useDeleteMoment();
-
-  console.log(childId, momentId, commentId);
+  const deleteComment = useDeleteComment();
 
   // TODO: add confirmation modal
   const handleClick = () => {
     if (childId) {
       deleteChild({ variables: { id: childId } });
     } else if (commentId) {
-      // deleteComment({ variables: { commentId, momentId } });
+      deleteComment({ variables: { id: commentId, momentId } });
     } else {
       deleteMoment({ variables: { id: momentId } });
     }

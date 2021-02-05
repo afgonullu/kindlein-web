@@ -41,10 +41,22 @@ export const client = new ApolloClient({
       Query: {
         fields: {
           child(_, { args, toReference }) {
-            return toReference({
-              __typename: "Child",
-              id: args!.id,
-            });
+            return toReference(
+              {
+                __typename: "Child",
+                id: args!.id,
+              },
+              true,
+            );
+          },
+          moment(_, { args, toReference }) {
+            return toReference(
+              {
+                __typename: "Moment",
+                id: args!.id,
+              },
+              true,
+            );
           },
         },
       },
