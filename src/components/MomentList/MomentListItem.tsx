@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable no-restricted-globals */
 /* eslint-disable no-return-assign */
 import React, { useContext } from "react";
 import { Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 
 import { AuthContext } from "../../context/auth";
 import { IMoment } from "../../utils/interfaces";
@@ -13,6 +12,16 @@ import LikeButton from "../Buttons/LikeButton";
 
 const MomentListItem: React.FC<{ moment: IMoment }> = ({ moment }) => {
   const { user } = useContext(AuthContext);
+  const { momentId } = useParams<{ momentId: string | undefined }>();
+  const history = useHistory();
+
+  const handleClick = () => {
+    if (!momentId) {
+      history.push(`/moments/${moment.id}`);
+    }
+  };
+
+  if (!moment) return <span>loading...</span>;
 
   return (
     <Card className="kl-card">
@@ -21,7 +30,7 @@ const MomentListItem: React.FC<{ moment: IMoment }> = ({ moment }) => {
           <span key={tag.body}>{tag.body}</span>
         ))}
       </Card.Header> */}
-      <Card.Body className="kl-card-body" onClick={() => (location.href = `/moments/${moment.id}`)}>
+      <Card.Body className="kl-card-body" onClick={handleClick}>
         <Card.Title>
           <span className="kl-card-title">{moment.title}</span>{" "}
           <span className="kl-card-meta text-muted">
