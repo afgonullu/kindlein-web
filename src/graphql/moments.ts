@@ -93,3 +93,39 @@ export const useDeleteMoment = () => {
   return deleteMoment;
 };
 // END OF DELETE MOMENT
+
+// LIKE & UNLIKE A MOMENT
+const LIKE_MOMENT = gql`
+  mutation likeMoment($id: ID!) {
+    likeMoment(id: $id) {
+      success
+      message
+      moment {
+        id
+        likeCount
+        likes {
+          id
+          username
+        }
+      }
+      child {
+        id
+        moments {
+          id
+          likeCount
+          likes {
+            id
+            username
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const useLikeMoment = () => {
+  const [likeMoment] = useMutation(LIKE_MOMENT);
+
+  return likeMoment;
+};
+// END OF LIKE & UNLIKE A MOMENT

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable no-restricted-globals */
 /* eslint-disable no-return-assign */
@@ -8,6 +9,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/auth";
 import { IMoment } from "../../utils/interfaces";
 import DeleteButton from "../Buttons/DeleteButton";
+import LikeButton from "../Buttons/LikeButton";
 
 const MomentListItem: React.FC<{ moment: IMoment }> = ({ moment }) => {
   const { user } = useContext(AuthContext);
@@ -35,6 +37,7 @@ const MomentListItem: React.FC<{ moment: IMoment }> = ({ moment }) => {
             <i className="bi bi-chat" />
             <span>{moment.commentCount}</span>
           </Link>
+          <LikeButton user={user!} moment={moment} />
         </div>
         <div className="meta" />
 
