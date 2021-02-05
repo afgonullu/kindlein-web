@@ -29,12 +29,16 @@ const MomentListItem: React.FC<{ moment: IMoment }> = ({ moment }) => {
         <Card.Subtitle />
         <Card.Text className="kl-card-text">{moment.body}</Card.Text>
       </Card.Body>
-      <Card.Footer className="kl-card-footer">
-        <Link className="kl-card-comment" to={`/moments/${moment.id}`}>
-          <i className="bi bi-chat" />
-          <span>{moment.commentCount}</span>
-        </Link>
-        {user && user.username === moment.createdBy ? (
+      <Card.Footer className="kl-card-footer info-meta">
+        <div className="interactions">
+          <Link className="kl-card-comment" to={`/moments/${moment.id}`}>
+            <i className="bi bi-chat" />
+            <span>{moment.commentCount}</span>
+          </Link>
+        </div>
+        <div className="meta" />
+
+        {user && user.id === moment.createdBy ? (
           <DeleteButton childId={null} momentId={moment.id} commentId={null} />
         ) : null}
       </Card.Footer>

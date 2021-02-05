@@ -10,7 +10,7 @@ const ChildrenListItem: React.FC<{ child: IChild }> = ({ child }) => {
   const { user } = useContext(AuthContext);
 
   return (
-    <ListGroupItem>
+    <ListGroupItem className="info-meta">
       <div className="info">
         <span>
           <img className="profile-image mr-2" src="https://via.placeholder.com/45" alt="" />

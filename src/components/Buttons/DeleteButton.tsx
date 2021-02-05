@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { Trash } from "react-feather";
 import { useDeleteChild } from "../../graphql/children";
+import { useDeleteMoment } from "../../graphql/moments";
 
 const DeleteButton: React.FC<{ childId: string | null; momentId: string | null; commentId: string | null }> = ({
   childId,
@@ -9,6 +10,7 @@ const DeleteButton: React.FC<{ childId: string | null; momentId: string | null; 
   commentId,
 }) => {
   const deleteChild = useDeleteChild();
+  const deleteMoment = useDeleteMoment();
 
   console.log(childId, momentId, commentId);
 
@@ -19,7 +21,7 @@ const DeleteButton: React.FC<{ childId: string | null; momentId: string | null; 
     } else if (commentId) {
       // deleteComment({ variables: { commentId, momentId } });
     } else {
-      // deleteMoment({ variables: { momentId } });
+      deleteMoment({ variables: { id: momentId } });
     }
   };
 

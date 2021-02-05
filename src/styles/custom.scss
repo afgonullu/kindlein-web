@@ -119,14 +119,8 @@ body {
     flex-direction: column;
     justify-content: space-between;
   }
-}
 
-.kl-profile {
-  .profile-image {
-    border-radius: 50%;
-  }
-
-  .list-group-item {
+  .info-meta {
     @extend .glassEffect2nd;
     margin-bottom: 0.512rem;
     display: flex;
@@ -141,6 +135,12 @@ body {
     &:last-child {
       border-radius: 1rem;
     }
+  }
+}
+
+.kl-profile {
+  .profile-image {
+    border-radius: 50%;
   }
 }
 
