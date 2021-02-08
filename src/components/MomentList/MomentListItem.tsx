@@ -51,7 +51,7 @@ const MomentListItem: React.FC<{ moment: IMoment }> = ({ moment }) => {
         <div className="meta" />
 
         {user && user.id === moment.createdBy ? (
-          <DeleteButton childId={null} momentId={moment.id} commentId={null} />
+          <DeleteButton childId={undefined} momentId={moment.id} commentId={undefined} />
         ) : null}
       </Card.Footer>
     </Card>

@@ -21,7 +21,7 @@ const ChildrenListItem: React.FC<{ child: IChild }> = ({ child }) => {
       </div>
       <div className="buttons">
         {user && user.id === child.createdBy ? (
-          <DeleteButton childId={child.id} momentId={null} commentId={null} />
+          <DeleteButton childId={child.id} momentId={undefined} commentId={undefined} />
         ) : null}
       </div>
     </ListGroupItem>
