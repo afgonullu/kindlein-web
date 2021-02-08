@@ -1,26 +1,27 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 
 import { AuthProvider } from "./context/auth";
 import "./App.scss";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import MyRoute from "./components/MyRoute";
 
 const App: React.FC = () => {
   return (
     <AuthProvider>
       <Router>
         <Switch>
-          <Route path="/login">
+          <MyRoute path="/login">
             <Login />
-          </Route>
-          <Route path="/register">
+          </MyRoute>
+          <MyRoute path="/register">
             <Register />
-          </Route>
-          <Route path="/">
+          </MyRoute>
+          <MyRoute path="/">
             <Home />
-          </Route>
+          </MyRoute>
         </Switch>
       </Router>
     </AuthProvider>

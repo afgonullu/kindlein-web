@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { Route, Switch } from "react-router-dom";
+import { Switch } from "react-router-dom";
+import MyRoute from "../components/MyRoute";
 
 import Header from "../layouts/Header";
 import Feed from "./Feed";
@@ -16,18 +17,18 @@ const Home: React.FC = () => {
         </Col>
         <Col md={11} xl={10}>
           <Switch>
-            <Route path="/profile">
+            <MyRoute path="/profile">
               <Profile />
-            </Route>
-            <Route path="/children/:childId">
+            </MyRoute>
+            <MyRoute path="/children/:childId">
               <Feed />
-            </Route>
-            <Route path="/moments/:momentId">
+            </MyRoute>
+            <MyRoute path="/moments/:momentId">
               <SingleMoment />
-            </Route>
-            <Route path="/">
+            </MyRoute>
+            <MyRoute path="/">
               <Feed />
-            </Route>
+            </MyRoute>
           </Switch>
         </Col>
       </Row>
